@@ -1,5 +1,9 @@
 #This file is to create the Pirate and Captain classes of the One Piece Text Game. We will import this file over into the main script so we can play our game.
 
+from imp import new_module
+from os import name
+
+
 class Pirate:
     #We will start off with making the pirate class. Pirates will need a name, type of fighter, and level. We will determine max health based off it's level.
     #Starting health will be it's maxed health and the pirate begins not knocked out.
@@ -80,6 +84,33 @@ class Pirate:
             enemy_pirate.lose_health(self.level)
 
             
+#Time to set up the Captain class. In this case, the Captain of the crew will be who controls the pirates and battles with them. 
+#Captains have a name, list of their crew, and a number of rumble balls. Whenever the Captain gets initialized, the first pirate in their list will be their first mate aka the active one.
+class Trainer:
+    def __init__(self, name, crew_list, num_rumble_balls):
+        self.name = name
+        self.crew = crew_list
+        self.rumble_balls = num_rumble_balls
+        self.first_mate = 0
+
+    def __repr__(self):
+        #Prints out your current stats as Captain. Name, what pirates are in your crew, and your current first mate
+        print("The captain {0} has the following crew:".format(self.name)
+        for pirates in self.crew:
+            print(pirates)
+        return "Your current first mate is {0}.format(self.crew[self.first_mate].name)"
+
+    def switch_first_mate(self, new_mate):
+        #Changes first mate to the number given as the new_mate parameter
+        #First need to check if the number for the new_mate is valid, the crew mate isn't knocked out, and isn't your current first mate.
+        if new_mate < len(self.crew) and new_mate >= 0:
+            if self.crew[new_mate].is_knocked_out:
+                print("{0} is knocked out! You can't make them your first mate.".format(self.crew[new_mate].name))
+            elif new_mate == self.first_mate:
+                print("{0} is already your current first mate.".format(self.crew[new_mate].name))
+            else:
+                self.first_mate = new_module
+                print("I'm counting on you, {0}!".format(self.crew[self.first_mate].name))
 
        
 
