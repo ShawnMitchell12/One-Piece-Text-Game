@@ -57,7 +57,27 @@ class Pirate:
             return
 
     
+        #The rest of the attack function will deal with taking type advantages into consideration. Since this is based off the manga One Piece, the 3 types I will use will be Devil Fruit, Haki, and Sword.
+        #While these are case-by-case in the One piece world, I am going to make my own type weakness triangle. Devil Fruit beats Sword. Sword beats Haki, and Haki beats Devil Fruit.
+        #Attacks with advantage will have double damage and attacks with disadvantage will have half damage.
 
+        #Super Effective
+        if (self.fighter_type == "Devil Fruit" and enemy_pirate.fighter_type == "Sword") or (self.fighter_type == "Sword" and enemy_pirate.fighter_type == "Haki") or (self.fighter_type == "Haki" and enemy_pirate.fighter_type == "Devil Fruit"):
+            print("{0} attacked {1} for {2} damage!".format(self.name, enemy_pirate.name, self.level * 2))
+            print("It's super effective!")
+            enemy_pirate.lose_health(self.level * 2)
+      
+        #Not Effective
+        if (self.fighter_type == "Devil Fruit" and enemy_pirate.fighter_type == "Haki") or (self.fighter_type == "Haki" and enemy_pirate.fighter_type == "Sword") or (self.fighter_type == "Sword" and enemy_pirate.fighter_type == "Devil Fruit"):
+            print("{0} attacked {1} for {2} damage!".format(self.name, enemy_pirate.name, round(self.level * 0.5))
+            print("That attack could have done more. Keep trying!")
+            enemy_pirate.lose_health(round(self.level * 0.5))
+
+        #Same Type
+        if (self.fighter_type == "Devil Fruit" and enemy_pirate.fighter_type == "Devil Fruit") or (self.fighter_type == "Sword" and enemy_pirate.fighter_type == "Sword") or (self.fighter_type == "Haki" and enemy_pirate.fighter_type == "Haki"):
+            print("{0} attacked {1} for {2} damage!".format(self.name, enemy_pirate.name, self.level))
+
+            
 
        
 
