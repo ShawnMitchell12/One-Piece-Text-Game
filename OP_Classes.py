@@ -76,6 +76,8 @@ class Pirate:
         #Same Type
         if (self.fighter_type == "Devil Fruit" and enemy_pirate.fighter_type == "Devil Fruit") or (self.fighter_type == "Sword" and enemy_pirate.fighter_type == "Sword") or (self.fighter_type == "Haki" and enemy_pirate.fighter_type == "Haki"):
             print("{0} attacked {1} for {2} damage!".format(self.name, enemy_pirate.name, self.level))
+            print("The pirates seem about even!")
+            enemy_pirate.lose_health(self.level)
 
             
 
