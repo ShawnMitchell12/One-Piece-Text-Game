@@ -4,7 +4,7 @@ class Pirate:
     #We will start off with making the pirate class. Pirates will need a name, type of fighter, and level. We will determine max health based off it's level.
     #Starting health will be it's maxed health and the pirate begins not knocked out.
     def __init__(self, name, fighter_type, level = 10):
-        self.name = Name
+        self.name = name
         self.fighter_type = fighter_type
         self.level = level
         self.health = level * 5
