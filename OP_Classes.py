@@ -86,7 +86,7 @@ class Pirate:
             
 #Time to set up the Captain class. In this case, the Captain of the crew will be who controls the pirates and battles with them. 
 #Captains have a name, list of their crew, and a number of rumble balls. Whenever the Captain gets initialized, the first pirate in their list will be their first mate aka the active one.
-class Trainer:
+class Captain:
     def __init__(self, name, crew_list, num_rumble_balls):
         self.name = name
         self.crew = crew_list
@@ -109,8 +109,24 @@ class Trainer:
             elif new_mate == self.first_mate:
                 print("{0} is already your current first mate.".format(self.crew[new_mate].name))
             else:
-                self.first_mate = new_module
+                self.first_mate = new_mate
                 print("I'm counting on you, {0}!".format(self.crew[self.first_mate].name))
+
+    def user_rumble_balls(self):
+        #Uses one of the Rumble Balls Dr. Chopper cooked up to heal your crew and give them energy to fight again.
+        if self.rumble_balls > 0:
+            print('You used a rumbkle ball on {0}'.format(self.crew[self.first_mate].name)
+            #A Rumble Ball restores 30 health to your first mate
+            self.crew[self.first_mate].gain_health(30)
+            self.rumble_balls -= 1
+        else:
+            print('Oh no! You are out of rumble balls!')
+
+    def attack_other_captain(self, other_captain):
+        #First mate fights the Other Captain's first mate
+        my_first_mate = self.crew[self.first_mate]
+        other_first_mate = other_captain.crew[other_captain.first_mate]
+        my_first_mate.attack(other_first_mate)
 
        
 
