@@ -1,5 +1,5 @@
 
-import OP_Classes.py
+import OP_Classes
 
 #Giving the captains a handful of options to choose for their pirates
 
