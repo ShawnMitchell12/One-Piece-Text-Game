@@ -111,6 +111,8 @@ class Captain:
             else:
                 self.first_mate = new_mate
                 print("I'm counting on you, {0}!".format(self.crew[self.first_mate].name))
+        if len(self.crew) == 0:
+            print('You have no active crew members. You lose the title of Pirate King! ')
 
     def user_rumble_balls(self):
         #Uses one of the Rumble Balls Dr. Chopper cooked up to heal your crew and give them energy to fight again.
