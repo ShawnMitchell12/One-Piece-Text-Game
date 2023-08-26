@@ -51,7 +51,7 @@ class Pirate:
         #Can't let the pirates come back with more health than their max health
         if self.health >= self.max_health:
             self.health = self.max_health
-        print("Your pirate {0} now has {1} health! Back to the fight!".format(name, health)
+        print("Your pirate {0} now has {1} health! Back to the fight!".format(name, health))
 
     def attack(self, enemy_pirate):
         #Function used to actually fight in the game.
@@ -73,7 +73,7 @@ class Pirate:
       
         #Not Effective
         if (self.fighter_type == "Devil Fruit" and enemy_pirate.fighter_type == "Haki") or (self.fighter_type == "Haki" and enemy_pirate.fighter_type == "Sword") or (self.fighter_type == "Sword" and enemy_pirate.fighter_type == "Devil Fruit"):
-            print("{0} attacked {1} for {2} damage!".format(self.name, enemy_pirate.name, round(self.level * 0.5))
+            print("{0} attacked {1} for {2} damage!".format(self.name, enemy_pirate.name, round(self.level * 0.5)))
             print("That attack could have done more. Keep trying!")
             enemy_pirate.lose_health(round(self.level * 0.5))
 
@@ -95,7 +95,7 @@ class Captain:
 
     def __repr__(self):
         #Prints out your current stats as Captain. Name, what pirates are in your crew, and your current first mate
-        print("The captain {0} has the following crew:".format(self.name)
+        print("The captain {0} has the following crew:".format(self.name))
         for pirates in self.crew:
             print(pirates)
         return "Your current first mate is {0}.format(self.crew[self.first_mate].name)"
@@ -115,7 +115,7 @@ class Captain:
     def user_rumble_balls(self):
         #Uses one of the Rumble Balls Dr. Chopper cooked up to heal your crew and give them energy to fight again.
         if self.rumble_balls > 0:
-            print('You used a rumbkle ball on {0}'.format(self.crew[self.first_mate].name)
+            print('You used a rumbkle ball on {0}'.format(self.crew[self.first_mate].name))
             #A Rumble Ball restores 30 health to your first mate
             self.crew[self.first_mate].gain_health(30)
             self.rumble_balls -= 1
