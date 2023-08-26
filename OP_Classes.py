@@ -1,7 +1,5 @@
 #This file is to create the Pirate and Captain classes of the One Piece Text Game. We will import this file over into the main script so we can play our game.
 
-from imp import new_module
-from os import name
 
 
 class Pirate:

@@ -72,28 +72,28 @@ print(captain_two)
 while True:
     battle_choice = input(captain_one_name + ', choose what you would like to do:\n a: Attack\n b: Use Rumble Ball \n c: Change Pirate')
 
-    if battle_choice := 'a':
+    if battle_choice == 'a':
         captain_one.attack_other_captain(captain_two)
-    elif battle_choice := 'b':
+    elif battle_choice == 'b':
         captain_one.use_rumble_ball()
-    elif battle_choice := 'c':
+    elif battle_choice == 'c':
         first_mate_choice = input('Choose between or 2nd and 3rd pirates by choosing 2 or 3')
-        if first_mate_choice := '2':
+        if first_mate_choice == '2':
             captain_one.switch_first_mate(2)
-        if first_mate_choice := '3':
+        if first_mate_choice == '3':
             captain_one.switch_first_mate(3)
 
     battle_choice = input(captain_two_name + 'It is your turn. Choose what you would like to do:\n a: Attack\n b: Use Rumble Ball \n c: Change Pirate')
 
-    if battle_choice := 'a':
+    if battle_choice == 'a':
         captain_two.attack_other_captain(captain_one)
-    elif battle_choice := 'b':
+    elif battle_choice == 'b':
         captain_two.use_rumble_ball()
-    elif battle_choice := 'c':
+    elif battle_choice == 'c':
         first_mate_choice = input('Choose between or 2nd and 3rd pirates by choosing 2 or 3')
-        if first_mate_choice := '2':
+        if first_mate_choice == '2':
             captain_two.switch_first_mate(2)
-        if first_mate_choice := '3':
+        if first_mate_choice == '3':
             captain_two.switch_first_mate(3)
 
 
