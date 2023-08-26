@@ -17,7 +17,7 @@ class Pirate:
 
     def __repr__(self):
         #Whenever you print a Pirate to the console, it will tell you their name, fighter type, level, and how much health they have left.
-        return "Your {0} level pirate, {1}, has {2} health remaining. {1} is a {3} fighting type pirate.".format(level, name, health, fighter_type)
+        return "Your {0} level pirate, {1}, has {2} health remaining. {1} is a {3} fighting type pirate.\n".format(level, name, health, fighter_type)
 
     def knockout(self):
         #During battle, knocking out an opposing pirate will change their knocked out status to True. A knocked out pirate can't have any health left.
